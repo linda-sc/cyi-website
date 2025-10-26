@@ -48,7 +48,7 @@ export const DesktopNav: React.FC<HeaderProps> = ({ navItems }) => {
             {item.name}
             {hasNestedLinks && (
               <span className="ml-1">
-                <CaretIcon width={10} />
+                <CaretIcon />
               </span>
             )}
           </div>
