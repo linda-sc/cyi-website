@@ -1,9 +1,9 @@
 import { NavItem } from "../components/header/types";
 
 export const navItems: NavItem[] = [
-  { name: "Home", linkHref: "/", sourceName: "home" },
+  { name: "HOME", linkHref: "/", sourceName: "home" },
   {
-    name: "About",
+    name: "ABOUT",
     links: [
       {
         name: "Our Story",
@@ -18,7 +18,7 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    name: "Programs",
+    name: "PROGRAMS",
     links: [
       {
         name: "Our Programs",
@@ -48,32 +48,22 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    name: "Partnerships",
+    name: "PARTNERSHIPS",
     links: [
       {
-        name: "Become a Partner",
-        linkHref: "/partnerships/join",
-        sourceName: "become-partner",
-      },
-      {
-        name: "Current Partners",
-        linkHref: "/partnerships/current",
-        sourceName: "current-partners",
+        name: "OCA-NY's HCPP",
+        linkHref: "/partnerships/oca-ny-hcpp",
+        sourceName: "oca-ny-hcpp",
       },
     ],
   },
   {
-    name: "Get Involved",
+    name: "GET INVOLVED",
     links: [
       {
-        name: "Volunteer",
-        linkHref: "/get-involved/volunteer",
-        sourceName: "volunteer",
-      },
-      {
-        name: "Donate",
-        linkHref: "/get-involved/donate",
-        sourceName: "donate",
+        name: "Youth Opportunities",
+        linkHref: "/get-involved/youth-opportunities",
+        sourceName: "youth-opportunities",
       },
       {
         name: "Events",
@@ -83,19 +73,19 @@ export const navItems: NavItem[] = [
     ],
   },
   {
-    name: "Alumni",
+    name: "ALUMNI",
     links: [
       {
-        name: "Alumni Network",
-        linkHref: "/alumni/network",
-        sourceName: "alumni-network",
+        name: "Welcome Back",
+        linkHref: "/alumni/welcome-back",
+        sourceName: "welcome-back",
       },
       {
-        name: "Alumni Stories",
-        linkHref: "/alumni/stories",
-        sourceName: "alumni-stories",
+        name: "Update Contact Information",
+        linkHref: "/alumni/update-contact-information",
+        sourceName: "update-contact-information",
       },
     ],
   },
-  { name: "Contact", linkHref: "/contact", sourceName: "contact" },
+  { name: "CONTACT", linkHref: "/contact", sourceName: "contact" },
 ];

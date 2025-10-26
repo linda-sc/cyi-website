@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LandingHeader } from "../components/header/LandingHeader";
-import { navItems } from "../editable/NavItems";
+import { navItems } from "../easyEdit/NavItems";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,12 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-white">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
         <LandingHeader navItems={navItems} source="layout" />
-        <div className="pt-14">{children}</div>
+        <div className="pt-14 bg-white min-h-screen">{children}</div>
       </body>
     </html>
   );

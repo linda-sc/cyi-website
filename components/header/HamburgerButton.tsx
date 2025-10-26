@@ -16,21 +16,20 @@ export const HamburgerButton: React.FC<HamburgerButtonProps> = ({
       aria-label="Toggle menu"
     >
       <span
-        className={`block w-5 h-0.5 rounded-full bg-blue-100 transition-transform duration-300 ${
+        className={`block w-5 h-0.5 rounded-full bg-gray-800 transition-transform duration-300 ${
           isOpen ? "rotate-45 translate-y-2" : ""
         }`}
       ></span>
       <span
-        className={`block w-5 h-0.5 rounded-full bg-blue-100 transition-opacity duration-300 ${
+        className={`block w-5 h-0.5 rounded-full bg-gray-800 transition-opacity duration-300 ${
           isOpen ? "opacity-0" : ""
         }`}
       ></span>
       <span
-        className={`block w-5 h-0.5 rounded-full bg-blue-100 transition-transform duration-300 ${
+        className={`block w-5 h-0.5 rounded-full bg-gray-800 transition-transform duration-300 ${
           isOpen ? "-rotate-45 -translate-y-2" : ""
         }`}
       ></span>
     </button>
   );
 };
-

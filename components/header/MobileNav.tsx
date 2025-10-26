@@ -15,10 +15,7 @@ const CaretIcon = ({ className }: { className?: string }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M5 8L1 4L9 4L5 8Z"
-      fill="currentColor"
-    />
+    <path d="M5 8L1 4L9 4L5 8Z" fill="currentColor" />
   </svg>
 );
 
@@ -34,7 +31,7 @@ export const MobileNav: React.FC<HeaderProps> = ({ isMenuOpen, navItems }) => {
 
   return (
     <div
-      className={`md:hidden overflow-hidden fixed top-14 left-0 right-0 bg-black transition-all cursor-pointer duration-300 ease-in-out ${
+      className={`md:hidden overflow-hidden fixed top-14 left-0 right-0 bg-white transition-all cursor-pointer duration-300 ease-in-out ${
         isMenuOpen ? "max-h-screen" : "max-h-0"
       }`}
     >
@@ -50,15 +47,13 @@ export const MobileNav: React.FC<HeaderProps> = ({ isMenuOpen, navItems }) => {
           return (
             <div
               key={item.name}
-              className="border-t border-gray-800 first:border-t-0"
+              className="border-t border-gray-200 first:border-t-0"
             >
               {item.linkHref ? (
                 <Link
                   href={item.linkHref}
-                  className={`block text-sm uppercase mono-font text-blue-100 transition-colors duration-200 hover:bg-gray-900 hover:text-blue-500 py-3 px-4 rounded-md ${
-                    isActiveLink
-                      ? "text-blue-500 bg-gray-900"
-                      : "text-blue-100"
+                  className={`block text-sm uppercase mono-font text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900 py-3 px-4 rounded-md ${
+                    isActiveLink ? "text-gray-900 bg-gray-50" : "text-gray-700"
                   }`}
                 >
                   {item.name}
@@ -66,10 +61,10 @@ export const MobileNav: React.FC<HeaderProps> = ({ isMenuOpen, navItems }) => {
               ) : (
                 <>
                   <div
-                    className={`text-sm uppercase flex justify-between items-center mono-font text-blue-100 transition-colors duration-200 hover:bg-gray-900 hover:text-blue-500 py-3 px-4 rounded-md cursor-pointer ${
+                    className={`text-sm uppercase flex justify-between items-center mono-font text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900 py-3 px-4 rounded-md cursor-pointer ${
                       isActiveLink
-                        ? "text-blue-500 bg-gray-900"
-                        : "text-blue-100"
+                        ? "text-gray-900 bg-gray-50"
+                        : "text-gray-700"
                     }`}
                     onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
                   >
@@ -80,7 +75,7 @@ export const MobileNav: React.FC<HeaderProps> = ({ isMenuOpen, navItems }) => {
                           isSubMenuOpen ? "rotate-180" : ""
                         }`}
                       >
-                        <CaretIcon className="text-blue-100" />
+                        <CaretIcon className="text-gray-700" />
                       </span>
                     )}
                   </div>
@@ -98,10 +93,10 @@ export const MobileNav: React.FC<HeaderProps> = ({ isMenuOpen, navItems }) => {
                               <div>{link.PreviewImage}</div>
                             )}
                             <span
-                              className={`block text-sm mono-font pl-4 py-3 px-4 rounded-md transition-colors duration-200 hover:bg-gray-900 hover:text-blue-500 ${
+                              className={`block text-sm mono-font pl-4 py-3 px-4 rounded-md transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900 ${
                                 isActive(link.linkHref)
-                                  ? "text-blue-500 bg-gray-900"
-                                  : "text-blue-100"
+                                  ? "text-gray-900 bg-gray-50"
+                                  : "text-gray-700"
                               }`}
                             >
                               {link.name}
@@ -120,4 +115,3 @@ export const MobileNav: React.FC<HeaderProps> = ({ isMenuOpen, navItems }) => {
     </div>
   );
 };
-

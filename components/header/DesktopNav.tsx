@@ -41,8 +41,8 @@ export const DesktopNav: React.FC<HeaderProps> = ({ navItems }) => {
 
         const innerContent = (
           <div
-            className={`text-sm uppercase mono-font flex items-center text-blue-100 transition-colors duration-200 cursor-pointer hover:bg-gray-900 hover:text-blue-500 py-2 px-4 rounded-md ${
-              isActiveLink ? "text-blue-500 bg-gray-900" : "text-blue-100"
+            className={`text-sm uppercase mono-font flex items-center text-gray-700 transition-colors duration-200 cursor-pointer hover:bg-gray-100 hover:text-gray-900 py-2 px-4 rounded-md ${
+              isActiveLink ? "text-gray-900 bg-gray-100" : "text-gray-700"
             }`}
           >
             {item.name}
@@ -72,14 +72,14 @@ export const DesktopNav: React.FC<HeaderProps> = ({ navItems }) => {
             )}
 
             {hasNestedLinks && isHovered && (
-              <div className="absolute top-full left-0 bg-black border border-gray-800 rounded-md shadow-lg py-2 px-4 gap-1 flex flex-col">
+              <div className="absolute top-full left-0 bg-white border border-gray-200 rounded-md shadow-lg py-2 px-4 gap-1 flex flex-col">
                 {item.links?.map((link) => (
                   <Link key={link.name} href={link.linkHref}>
                     <div
-                      className={`flex-row flex items-center gap-2 px-1 hover:bg-gray-700 hover:text-blue-500 hover:scale-105 rounded-md transition-all cursor-pointer duration-100 whitespace-nowrap ${
+                      className={`flex-row flex items-center gap-2 px-1 hover:bg-gray-50 hover:text-gray-900 hover:scale-105 rounded-md transition-all cursor-pointer duration-100 whitespace-nowrap ${
                         isActive(link.linkHref)
-                          ? "text-blue-500 bg-gray-900"
-                          : "text-blue-100"
+                          ? "text-gray-900 bg-gray-50"
+                          : "text-gray-700"
                       }`}
                     >
                       {link.PreviewImage && (
