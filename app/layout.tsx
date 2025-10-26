@@ -4,6 +4,11 @@ import "./globals.css";
 import { LandingHeader } from "../components/header/LandingHeader";
 import { navItems } from "../easyEdit/NavItems";
 
+// ============================================
+// FONT CONFIGURATION - Update these to change fonts across the entire site
+// ============================================
+// Available Google Fonts: https://fonts.google.com/
+// To change fonts, import a different font here and update the variable names
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -13,6 +18,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+// ============================================
 
 export const metadata: Metadata = {
   title: "Create Next App",

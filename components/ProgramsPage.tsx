@@ -7,7 +7,7 @@ export const ProgramsPage: React.FC = () => {
   return (
     <div className="programs-page">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-orange-50 to-white">
+      <section className="py-20 px-4 bg-gradient-to-br from-orange-50 to-orange-50">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Our Programs

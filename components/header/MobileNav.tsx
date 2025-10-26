@@ -49,64 +49,71 @@ export const MobileNav: React.FC<HeaderProps> = ({ isMenuOpen, navItems }) => {
               key={item.name}
               className="border-t border-gray-200 first:border-t-0"
             >
-              {item.linkHref ? (
-                <Link
-                  href={item.linkHref}
-                  className={`block text-sm uppercase mono-font text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900 py-3 px-4 rounded-md ${
-                    isActiveLink ? "text-gray-900 bg-gray-50" : "text-gray-700"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                <>
-                  <div
-                    className={`text-sm uppercase flex justify-between items-center mono-font text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900 py-3 px-4 rounded-md cursor-pointer ${
-                      isActiveLink
-                        ? "text-gray-900 bg-gray-50"
-                        : "text-gray-700"
-                    }`}
-                    onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
+              <div
+                className={`text-sm uppercase flex justify-between items-center mono-font text-gray-700 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900 py-3 px-4 rounded-md ${
+                  isActiveLink ? "text-gray-900 bg-gray-50" : "text-gray-700"
+                } ${item.linkHref ? "" : "cursor-pointer"}`}
+                onClick={
+                  item.linkHref
+                    ? undefined
+                    : () => setIsSubMenuOpen(!isSubMenuOpen)
+                }
+              >
+                {item.linkHref ? (
+                  <Link
+                    href={item.linkHref}
+                    className="flex-1"
+                    onClick={(e) => {
+                      if (hasNestedLinks && isSubMenuOpen) {
+                        e.preventDefault();
+                        setIsSubMenuOpen(false);
+                      }
+                    }}
                   >
                     {item.name}
-                    {hasNestedLinks && (
-                      <span
-                        className={`text-xs transition-transform duration-300 ${
-                          isSubMenuOpen ? "rotate-180" : ""
-                        }`}
-                      >
-                        <CaretIcon className="text-gray-700" />
-                      </span>
-                    )}
-                  </div>
-
-                  {hasNestedLinks && (
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ${
-                        isSubMenuOpen ? "max-h-96" : "max-h-0"
+                  </Link>
+                ) : (
+                  <span>{item.name}</span>
+                )}
+                {hasNestedLinks && (
+                  <button
+                    onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
+                    className="ml-2"
+                  >
+                    <span
+                      className={`text-xs transition-transform duration-300 ${
+                        isSubMenuOpen ? "rotate-180" : ""
                       }`}
                     >
-                      {item.links?.map((link) => (
-                        <Link key={link.name} href={link.linkHref}>
-                          <div className="pl-8 flex items-center gap-0">
-                            {link.PreviewImage && (
-                              <div>{link.PreviewImage}</div>
-                            )}
-                            <span
-                              className={`block text-sm mono-font pl-4 py-3 px-4 rounded-md transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900 ${
-                                isActive(link.linkHref)
-                                  ? "text-gray-900 bg-gray-50"
-                                  : "text-gray-700"
-                              }`}
-                            >
-                              {link.name}
-                            </span>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </>
+                      <CaretIcon className="text-gray-700" />
+                    </span>
+                  </button>
+                )}
+              </div>
+
+              {hasNestedLinks && (
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    isSubMenuOpen ? "max-h-96" : "max-h-0"
+                  }`}
+                >
+                  {item.links?.map((link) => (
+                    <Link key={link.name} href={link.linkHref}>
+                      <div className="pl-8 flex items-center gap-0">
+                        {link.PreviewImage && <div>{link.PreviewImage}</div>}
+                        <span
+                          className={`block text-sm mono-font pl-4 py-3 px-4 rounded-md transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900 ${
+                            isActive(link.linkHref)
+                              ? "text-gray-900 bg-gray-50"
+                              : "text-gray-700"
+                          }`}
+                        >
+                          {link.name}
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               )}
             </div>
           );

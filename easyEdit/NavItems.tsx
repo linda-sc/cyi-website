@@ -4,10 +4,11 @@ export const navItems: NavItem[] = [
   { name: "HOME", linkHref: "/", sourceName: "home" },
   {
     name: "ABOUT",
+    linkHref: "/about",
     links: [
       {
-        name: "Our Story",
-        linkHref: "/about/story",
+        name: "Newsroom",
+        linkHref: "/about/newsroom",
         sourceName: "our-story",
       },
       {
@@ -19,12 +20,8 @@ export const navItems: NavItem[] = [
   },
   {
     name: "PROGRAMS",
+    linkHref: "/programs",
     links: [
-      {
-        name: "Our Programs",
-        linkHref: "/programs/current",
-        sourceName: "current-programs",
-      },
       {
         name: "Summer Leadership Institute",
         linkHref: "/programs/slc",
@@ -49,6 +46,7 @@ export const navItems: NavItem[] = [
   },
   {
     name: "PARTNERSHIPS",
+    linkHref: "/partnerships",
     links: [
       {
         name: "OCA-NY's HCPP",
@@ -59,6 +57,7 @@ export const navItems: NavItem[] = [
   },
   {
     name: "GET INVOLVED",
+    linkHref: "/get-involved",
     links: [
       {
         name: "Youth Opportunities",
@@ -74,6 +73,7 @@ export const navItems: NavItem[] = [
   },
   {
     name: "ALUMNI",
+    linkHref: "/alumni",
     links: [
       {
         name: "Welcome Back",
